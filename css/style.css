@@ -1599,7 +1599,7 @@ body {
     }
     
     .problems-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -1686,33 +1686,68 @@ body {
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .problems-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 120px 0 60px;
+    }
+    
     .hero-title {
         font-size: 2.2rem;
+        line-height: 1.3;
     }
     
     .hero-subtitle {
         font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+        margin-bottom: 20px;
     }
     
     .hero-stats {
-        flex-direction: column;
-        gap: 25px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .stat-item {
+        min-width: 80px;
     }
     
     .stat-number {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
     }
     
     .hero-buttons {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        max-width: 280px;
+        margin: 0 auto;
     }
     
     .btn {
         width: 100%;
+        padding: 14px 28px;
+    }
+    
+    .hero-scroll {
+        display: none;
     }
     
     .section {
@@ -1720,7 +1755,13 @@ body {
     }
     
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        padding: 0 10px;
+    }
+    
+    .section-desc {
+        font-size: 0.95rem;
+        padding: 0 10px;
     }
     
     .process-flow {
@@ -1734,6 +1775,33 @@ body {
     
     .course-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .course-card {
+        padding: 20px;
+    }
+    
+    .course-card h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .course-duration,
+    .course-target {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    .course-desc {
+        font-size: 0.85rem;
+    }
+    
+    .course-badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        top: -8px;
+        right: 15px;
     }
     
     .trust-grid {
@@ -1761,19 +1829,66 @@ body {
     .social-links {
         flex-direction: column;
     }
+    
+    .problems-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .problem-item {
+        padding: 12px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .problem-item i {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+    }
+    
+    .notice-box {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .notice-box i {
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 480px) {
     .nav-container {
-        padding: 0 20px;
+        padding: 0 15px;
+    }
+    
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
     }
     
     .logo-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .hero {
+        padding: 100px 0 50px;
     }
     
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
     }
     
     .about-card,
@@ -1783,7 +1898,7 @@ body {
     .values-section,
     .teachers-section,
     .core-values {
-        padding: 25px;
+        padding: 20px;
     }
     
     .dimensions-list {
@@ -1792,10 +1907,119 @@ body {
     
     .dimension-item {
         flex: 0 0 calc(50% - 10px);
+        margin-bottom: 15px;
+    }
+    
+    .dim-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .dim-name {
+        font-size: 0.9rem;
+    }
+    
+    .dim-desc {
+        font-size: 0.7rem;
     }
     
     .problems-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .problem-item {
+        padding: 10px 6px;
+        font-size: 0.75rem;
+    }
+    
+    .problem-item i {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+    
+    .service-header {
+        padding: 25px 20px;
+    }
+    
+    .service-body {
+        padding: 20px;
+    }
+    
+    .service-desc {
+        margin-bottom: 20px;
+    }
+    
+    .category-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    
+    .contact-item {
+        padding: 15px 0;
+    }
+    
+    .contact-item i {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .footer-content {
+        gap: 30px;
+    }
+    
+    .footer-brand p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 移动端优化：提升触摸体验 */
+@media (max-width: 768px) {
+    .nav-links a {
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+    
+    .about-card ul li {
+        padding: 6px 0;
+        font-size: 0.9rem;
+    }
+    
+    .target-item {
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
+    
+    .training-content ul li {
+        padding: 8px 0 8px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .adv-item-simple {
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
+    
+    .teacher-card ul li {
+        padding: 6px 0;
+        font-size: 0.9rem;
+    }
+    
+    .value-item {
+        gap: 8px;
+    }
+    
+    .value-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .value-text {
+        font-size: 1rem;
     }
 }
 
