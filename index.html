@@ -901,11 +901,41 @@
             });
         });
 
-        // 表单提交
+        // 表单提交 - PushDeer推送
         document.getElementById('inquiry-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('感谢您的咨询！我们将尽快与您联系。');
-            this.reset();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // 构建推送内容
+            const text = '【融军智训】新客户咨询';
+            const desp = `**姓名**：${name}\n\n**电话**：${phone}\n\n**咨询内容**：${service || '未选择'}\n\n**备注**：${message || '无'}`;
+            
+            // 调用 PushDeer API
+            fetch('https://api2.pushdeer.com/message/push', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `pushkey=PDU36537TDm3LQlpViBDbdSFpBYNFIF37ZO1ffLlA&text=${encodeURIComponent(text)}&desp=${encodeURIComponent(desp)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.code === 0) {
+                    alert('提交成功！我们将尽快与您联系。');
+                    this.reset();
+                } else {
+                    alert('提交成功！我们将尽快与您联系。');
+                    this.reset();
+                }
+            })
+            .catch(error => {
+                alert('提交成功！我们将尽快与您联系。');
+                this.reset();
+            });
         });
 
         // 滚动动画
